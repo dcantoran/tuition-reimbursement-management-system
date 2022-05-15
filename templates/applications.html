@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TRMS Applications</title>
+    <style>
+        ul {
+        margin: 10px 0;
+        }
+        li {
+        font-size: 20px;
+        margin: 5px 0;
+        }
+        button {
+        padding: 5px 15px;
+        font-weight: bold;
+        border: 2px solid black;
+        border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Submitted Applications Page for {{ user }}</h1>
+<div>
+    <ul>
+        {% for a in account %}
+        <li>Form ID: {{ a['f_id'] }}</li>
+        <li>Applicant ID: {{ a['app_id'] }}</li>
+        <li>Applicant Name: {{ a['a_name'] }}</li>
+        <li>Date Submitted: {{ a['date_submitted'] }}</li>
+        <li>Time Submitted: {{ a['time_submitted'] }}</li>
+        <li>Location: {{ a['location'] }}</li>
+        <li>Description: {{ a['description'] }}</li>
+        <li>Cost: {{ a['e_cost'] }}</li>
+        <li>Event Type: {{ a['e_type'] }}</li>
+        <li>Status: {{ a['e_status'] }}</li>
+        <li>Grade Format: {{ a['grade_format'] }}</li>
+        <li>Benefits Coordinator Approval: {{ a['bc_approved'] }}</li>
+        <li>Department Head Approval: {{ a['dh_approved'] }}</li>
+        <li>Supervisor Approval: {{ a['sv_approved'] }}</li><br><br>
+        {% endfor %}
+    </ul>
+</div>
+<button onclick="window.location = 'http://localhost:5000/protected'" type="submit">Return to Account</button>
+</body>
+</html>

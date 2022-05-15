@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Department Head Login</title>
+    <style>
+        body {
+        background-color: #e5e5e5;
+        text-align: center;
+        }
+        #welcome {
+        padding: 40px 0;
+        }
+        h3 {
+        padding-top: 15px;
+        }
+        #user {
+        margin: 10px 0;
+        }
+        #pass {
+        margin-bottom: 20px;
+        }
+        #submit {
+        padding: 2px 15px;
+        margin-bottom: 30px;
+        border: 2px solid black;
+        border-radius: 5px;
+        background-color: lightblue;
+        color: black;
+        cursor: pointer;
+        font-weight: bold;
+        }
+        #aLogin {
+        padding: 2px 15px;
+        margin-bottom: 30px;
+        border: 2px solid black;
+        border-radius: 5px;
+        background-color: #909bc6;
+        color: black;
+        cursor: pointer;
+        font-weight: bold;
+        }
+        #bcLogin {
+        padding: 2px 15px;
+        margin-bottom: 30px;
+        border: 2px solid black;
+        border-radius: 5px;
+        background-color: #99a599;
+        color: black;
+        cursor: pointer;
+        font-weight: bold;
+        }
+        #svLogin {
+        padding: 2px 15px;
+        margin-bottom: 30px;
+        border: 2px solid black;
+        border-radius: 5px;
+        background-color: #f0b694;
+        color: black;
+        cursor: pointer;
+        font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="welcome">Department Head Login Page</h1>
+<h3>Please Login</h3>
+<form action="/dh_login" method="post">
+  Username <input type="text" name="username" id="user" required><br>
+  Password <input type="password" name="password" id="pass" required><br>
+  <input type="submit" id="submit">
+</form>
+
+<button id="aLogin" onclick="window.location = 'http://localhost:5000/'" type="submit">
+    Applicant Login</button><br>
+<button id="bcLogin" onclick="window.location = 'http://localhost:5000/bc_login'" type="submit">
+    Benefits Coordinator Login</button><br>
+<button id="svLogin" onclick="window.location = 'http://localhost:5000/sv_login'" type="submit">
+    Supervisor Login</button>
+</body>
+</html>

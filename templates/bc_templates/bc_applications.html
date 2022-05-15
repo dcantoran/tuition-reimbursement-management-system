@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BenCo Applications</title>
+    <style>
+        ul {
+        margin: 10px 0;
+        }
+        li {
+        font-size: 20px;
+        margin: 5px 0;
+        }
+        button {
+        padding: 5px 15px;
+        font-weight: bold;
+        border: 2px solid black;
+        border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Tuition Reimbursement Form View for {{user}}</h1>
+<div>
+    <ul>
+        {% for bc in benco_account %}
+        <li>Form ID: {{ bc['f_id'] }}</li>
+        <li>Applicant ID: {{ bc['app_id'] }}</li>
+        <li>Applicant Name: {{ bc['a_name'] }}</li>
+        <li>Date Submitted: {{ bc['date_submitted'] }}</li>
+        <li>Time Submitted: {{ bc['time_submitted'] }}</li>
+        <li>Location: {{ bc['location'] }}</li>
+        <li>Description: {{ bc['description'] }}</li>
+        <li>Cost: {{ bc['e_cost'] }}</li>
+        <li>Event Type: {{ bc['e_type'] }}</li>
+        <li>Status: {{ bc['e_status'] }}</li>
+        <li>Grade Format: {{ bc['grade_format'] }}</li>
+        <li>Benefits Coordinator Approval: {{ bc['bc_approved'] }}</li>
+        <li>Department Head Approval: {{ bc['dh_approved'] }}</li>
+        <li>Supervisor Approval: {{ bc['sv_approved'] }}</li><br><br>
+        {% endfor %}
+    </ul>
+</div>
+<button onclick="window.location = 'http://localhost:5000/bc_protected'" type="submit">Return to Account</button>
+</body>
+</html>

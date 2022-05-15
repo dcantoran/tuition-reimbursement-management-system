@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Supervisor Applications</title>
+    <style>
+        ul {
+        margin: 10px 0;
+        }
+        li {
+        font-size: 20px;
+        margin: 5px 0;
+        }
+        button {
+        padding: 5px 15px;
+        font-weight: bold;
+        border: 2px solid black;
+        border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Tuition Reimbursement Form View for {{user}}</h1>
+<div>
+    <ul>
+        {% for sv in sv_account %}
+        <li>Form ID: {{ sv['f_id'] }}</li>
+        <li>Applicant ID: {{ sv['app_id'] }}</li>
+        <li>Applicant Name: {{ sv['a_name'] }}</li>
+        <li>Date Submitted: {{ sv['date_submitted'] }}</li>
+        <li>Time Submitted: {{ sv['time_submitted'] }}</li>
+        <li>Location: {{ sv['location'] }}</li>
+        <li>Description: {{ sv['description'] }}</li>
+        <li>Cost: {{ sv['e_cost'] }}</li>
+        <li>Event Type: {{ sv['e_type'] }}</li>
+        <li>Status: {{ sv['e_status'] }}</li>
+        <li>Grade Format: {{ sv['grade_format'] }}</li>
+        <li>Benefits Coordinator Approval: {{ sv['bc_approved'] }}</li>
+        <li>Department Head Approval: {{ sv['dh_approved'] }}</li>
+        <li>Supervisor Approval: {{ sv['sv_approved'] }}</li><br><br>
+        {% endfor %}
+    </ul>
+</div>
+<button onclick="window.location = 'http://localhost:5000/sv_protected'" type="submit">Return to Account</button>
+</body>
+</html>

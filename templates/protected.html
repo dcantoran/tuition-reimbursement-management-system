@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TRMS User Page</title>
+    <style>
+        body {
+        text-align: center;
+        }
+        h3 {
+        font-size: 25px;
+        }
+        form {
+        display: block;
+        }
+        label {
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 0;
+        }
+        button {
+        display: inline-block;
+        margin: 5px 0;
+        padding: 4px 10px;
+        border: 2px solid black;
+        border-radius: 5px;
+        font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Welcome {{ user }} to the Protected Page</h1>
+
+<button onclick="window.location = 'http://localhost:5000/applications'" type="submit">View Submitted Applications</button>
+
+<form action="{{ url_for('protected') }}" method="post">
+    <h3>Tuition Reimbursement Form</h3>
+
+    <label for="aName" id="appName">Applicant Name: </label>
+    <input type="text" id="aName" name="username" value="{{user}}" readonly><br>
+
+    <label id="location">Location:</label><br>
+    <label for="ny">New York</label>
+    <input type="radio" id="ny" value="new york" name="location" checked><br>
+    <label for="sf">San Francisco</label>
+    <input type="radio" id="sf" value="san francisco" name="location"><br>
+
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description"><br>
+
+    <label for="cost">Cost:</label>
+    <input type="number" id="cost" value="0" min="0" name="eCost"><br>
+
+    <label>Event Type:</label><br>
+    <label for="cert">Certification</label>
+    <input type="radio" id="cert" value="certification" name="eType" checked><br>
+    <label for="train">Technical Training</label>
+    <input type="radio" id="train" value="technical training" name="eType"><br>
+    <label for="course">University Courses</label>
+    <input type="radio" id="course" value="university course" name="eType"><br>
+    <label for="cert_prep">Certification Preparation Courses</label>
+    <input type="radio" id="cert_prep" value="certification prep course" name="eType"><br>
+    <label for="seminar">Seminars</label>
+    <input type="radio" id="seminar" value="seminar" name="eType"><br>
+    <label for="other">Other</label>
+    <input type="radio" id="other" value="other" name="eType"><br>
+
+    <label>Grade Format:</label><br>
+    <label for="letter">Letter Grade</label>
+    <input type="radio" id="letter" value="letter grade" name="gradeFormat" checked><br>
+    <label for="pres">Presentation</label>
+    <input type="radio" id="pres" value="presentation" name="gradeFormat"><br>
+    <label for="lp">Letter Grade & Presentation</label>
+    <input type="radio" id="lp" value="letter and presentation" name="gradeFormat"><br>
+
+    <label for="appId">Applicant ID:</label>
+    <input type="number" id="appId" value="{{id}}" min="1" max="5" name="appId" readonly><br>
+
+    <!-- <label>Available:</label><br>
+    <label for="yes">Yes</label>
+    <input type="radio" id="yes" value="true" name="availability" checked><br>
+    <label for="no">No</label>
+    <input type="radio" id="no" value="false" name="availability"><br> -->
+
+    <button>Submit Application</button>
+</form>
+
+<button onclick="window.location = 'http://localhost:5000/dropsession'" type="submit">Logout</button>
+
+
+</body>
+</html>
